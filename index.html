@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karla Loyaga | WDD 231 Home</title>
+    <meta name="description" content="Course home page of Karla Loyaga for WDD 231 Web Frontend Development I.">
+    <meta name="author" content="Karla Loyaga">
+    <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
+</head>
+<body>
+    <header>
+        <img src="images/logo.svg" alt="Site logo" width="40" height="40">
+        <span class="site-name">Karla Loyaga</span>
+        <button id="menu-button" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">&#9776;</button>
+        <nav id="main-nav" aria-label="Main">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Final</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Home</h1>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>Hello! I'm Karla Loyaga, a student from Trujillo, Peru, learning web development. Add a short description about yourself here.</p>
+        </section>
+
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filters">
+                <button type="button" id="all-btn">All Courses</button>
+                <button type="button" id="wdd-btn">WDD Courses</button>
+                <button type="button" id="cse-btn">CSE Courses</button>
+            </div>
+            <p id="credits">The total credits for courses listed below is 0</p>
+            <div id="course-list" class="course-list"></div>
+        </section>
+
+        <section class="goals">
+            <h2>My Goals</h2>
+            <p>Add a short description of what you want to achieve in this course.</p>
+        </section>
+    </main>
+
+    <footer>
+                <div class="social">
+            <a href="https://github.com/kbea1" aria-label="GitHub"><img src="images/github.svg" alt="" width="32" height="32"></a>
+            <a href="https://www.linkedin.com/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="" width="32" height="32"></a>
+        </div>
+        <p>&copy; <span id="currentyear"></span> &bull; Karla Loyaga &bull; Trujillo, Perú</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
