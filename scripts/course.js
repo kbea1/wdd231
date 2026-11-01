@@ -95,7 +95,7 @@ function displayCourses(list) {
     });
 
     const totalCredits = list.reduce((sum, course) => sum + course.credits, 0);
-    creditsText.textContent = `The total credits for courses listed below is ${totalCredits}`;
+    creditsText.textContent = `The total credits for courses listed above is ${totalCredits}`;
 }
 
 document.querySelector("#all-btn").addEventListener("click", () => displayCourses(courses));
