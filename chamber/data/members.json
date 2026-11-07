@@ -1,0 +1,74 @@
+{
+    "members": [
+        {
+            "name": "Café Marinera",
+            "tagline": "Coffee with northern flavor",
+            "address": "Jr. Pizarro 245, Trujillo",
+            "phone": "+51 44 555 0101",
+            "email": "hola@cafemarinera.pe",
+            "website": "https://www.cafemarinera.example.com",
+            "image": "cafe-marinera.svg",
+            "membership": 3
+        },
+        {
+            "name": "Chan Chan Tours",
+            "tagline": "Discover the ancient Chimú capital",
+            "address": "Av. España 1020, Trujillo",
+            "phone": "+51 44 555 0102",
+            "email": "info@chanchantours.pe",
+            "website": "https://www.chanchantours.example.com",
+            "image": "chan-chan-tours.svg",
+            "membership": 3
+        },
+        {
+            "name": "Huanchaco Surf School",
+            "tagline": "Ride the waves of the north coast",
+            "address": "Malecón Larco 310, Huanchaco",
+            "phone": "+51 44 555 0103",
+            "email": "surf@huanchacosurf.pe",
+            "website": "https://www.huanchacosurf.example.com",
+            "image": "huanchaco-surf.svg",
+            "membership": 2
+        },
+        {
+            "name": "Panadería La Libertad",
+            "tagline": "Fresh bread every morning",
+            "address": "Av. América Sur 580, Trujillo",
+            "phone": "+51 44 555 0104",
+            "email": "pedidos@panaderialalibertad.pe",
+            "website": "https://www.panaderialalibertad.example.com",
+            "image": "panaderia-la-libertad.svg",
+            "membership": 2
+        },
+        {
+            "name": "Norte Tech Solutions",
+            "tagline": "Software and IT support for local business",
+            "address": "Calle Bolívar 412, Trujillo",
+            "phone": "+51 44 555 0105",
+            "email": "contacto@nortetech.pe",
+            "website": "https://www.nortetech.example.com",
+            "image": "norte-tech.svg",
+            "membership": 2
+        },
+        {
+            "name": "Chimú Artesanías",
+            "tagline": "Handmade crafts from La Libertad",
+            "address": "Jr. Independencia 150, Trujillo",
+            "phone": "+51 44 555 0106",
+            "email": "ventas@chimuartesanias.pe",
+            "website": "https://www.chimuartesanias.example.com",
+            "image": "chimu-artesanias.svg",
+            "membership": 1
+        },
+        {
+            "name": "Hotel Casa del Sol",
+            "tagline": "Comfort in the heart of the city",
+            "address": "Av. Larco 789, Trujillo",
+            "phone": "+51 44 555 0107",
+            "email": "reservas@hotelcasadelsol.pe",
+            "website": "https://www.hotelcasadelsol.example.com",
+            "image": "hotel-casa-del-sol.svg",
+            "membership": 1
+        }
+    ]
+}

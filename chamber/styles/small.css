@@ -1,0 +1,201 @@
+:root {
+    --primary: #2f3a5f;
+    --primary-light: #4a5a8f;
+    --secondary: #d9694a;
+    --text: #1f1f1f;
+    --bg: #ffffff;
+    --white: #ffffff;
+    --gray: #e3e3e3;
+    --panel: #f2f2f2;
+    --gold: #f2c94c;
+    --silver: #c9d1dc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---------- Header y navegación ---------- */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+}
+
+.site-name {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-right: auto;
+}
+
+#menu-button {
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+nav {
+    display: none;
+    background-color: var(--primary);
+}
+
+nav.open { display: block; }
+nav ul { list-style: none; margin: 0; padding: 0; }
+
+nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: var(--white);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-light);
+}
+
+nav a:hover { background-color: var(--primary-light); }
+
+nav a[aria-current="page"] {
+    font-weight: 600;
+    background-color: var(--primary-light);
+}
+
+/* ---------- Contenido principal ---------- */
+main { padding: 0 1rem 1.5rem; }
+
+h1 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.view-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.view-buttons button {
+    min-width: 6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.view-buttons button[aria-pressed="true"] {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.view-buttons button:hover,
+.view-buttons button:focus-visible {
+    background-color: var(--primary-light);
+    color: var(--white);
+}
+
+/* ---------- Tarjetas de miembros ---------- */
+#members {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.card {
+    background-color: var(--panel);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--gray);
+}
+
+.card-header {
+    background-color: var(--gray);
+    text-align: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.card-header p {
+    margin: 0;
+    font-size: 0.85rem;
+}
+
+.card-body {
+    display: flex;
+    gap: 0.75rem;
+    padding: 0.75rem;
+}
+
+.card-body img {
+    width: 110px;
+    height: auto;
+    flex-shrink: 0;
+    align-self: flex-start;
+    border-radius: 6px;
+}
+
+.card-details p {
+    margin: 0 0 0.25rem;
+    font-size: 0.9rem;
+    overflow-wrap: anywhere;
+}
+
+.card-details a { color: var(--primary); }
+
+.badge {
+    display: inline-block;
+    padding: 0.1rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text);
+    background-color: var(--gray);
+}
+
+.badge.silver { background-color: var(--silver); }
+.badge.gold { background-color: var(--gold); }
+
+/* Vista de lista: una columna, sin imágenes */
+#members.list { grid-template-columns: 1fr; gap: 0.5rem; }
+#members.list .card-body img { display: none; }
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--gray);
+    color: var(--text);
+    padding: 1rem;
+}
+
+footer p { margin: 0.2rem 0; }
+
+.footer-contact,
+.footer-info { text-align: center; padding: 0.5rem 0; }
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0.5rem 0;
+}

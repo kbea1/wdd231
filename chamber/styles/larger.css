@@ -1,0 +1,44 @@
+@media (min-width: 700px) {
+    .brand {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0.75rem 2rem;
+    }
+
+    #menu-button { display: none; }
+
+    nav { display: block; }
+
+    nav ul {
+        display: flex;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+    }
+
+    nav a {
+        padding: 0.6rem 1rem;
+        border-bottom: none;
+    }
+
+    main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem 2rem;
+    }
+
+    #members { grid-template-columns: repeat(3, 1fr); }
+
+    #members.list { grid-template-columns: 1fr; }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem 2rem;
+    }
+
+    .footer-contact { text-align: left; }
+    .footer-info { text-align: right; }
+}
