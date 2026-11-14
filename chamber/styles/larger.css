@@ -42,3 +42,21 @@
     .footer-contact { text-align: left; }
     .footer-info { text-align: right; }
 }
+@media (min-width: 700px) {
+    main.home {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        align-items: start;
+    }
+
+    main.home h1,
+    .hero,
+    .spotlights { grid-column: 1 / -1; }
+
+    .home section { margin-bottom: 0; }
+
+    #spotlights { grid-template-columns: repeat(3, 1fr); }
+
+    .cta { bottom: 2rem; padding: 0.8rem 1.75rem; font-size: 1.1rem; }
+}
