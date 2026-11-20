@@ -42,6 +42,7 @@
     .footer-contact { text-align: left; }
     .footer-info { text-align: right; }
 }
+
 @media (min-width: 700px) {
     main.home {
         display: grid;
@@ -59,4 +60,11 @@
     #spotlights { grid-template-columns: repeat(3, 1fr); }
 
     .cta { bottom: 2rem; padding: 0.8rem 1.75rem; font-size: 1.1rem; }
+}
+
+@media (min-width: 700px) {
+    .join-layout {
+        grid-template-columns: 3fr 2fr;
+        align-items: start;
+    }
 }

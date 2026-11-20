@@ -296,3 +296,183 @@ footer p { margin: 0.2rem 0; }
 .spotlight p { margin: 0.25rem 0; padding: 0 0.75rem; font-size: 0.9rem; overflow-wrap: anywhere; }
 .spotlight p:last-child { padding-bottom: 0.75rem; }
 .spotlight a { color: var(--primary); }
+/* ---------- Página Join ---------- */
+.join-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.join h2 {
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+.application form {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--panel);
+    border-radius: 8px;
+}
+
+.application label {
+    display: grid;
+    gap: 0.3rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.application input[type="text"],
+.application input[type="email"],
+.application input[type="tel"],
+.application select,
+.application textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: 2px solid #8a8a8a;
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.application input:focus,
+.application select:focus,
+.application textarea:focus {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 1px;
+    border-color: var(--primary);
+}
+
+.application input[type="submit"] {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.application input[type="submit"]:hover,
+.application input[type="submit"]:focus-visible {
+    background-color: var(--primary-light);
+}
+
+/* Tarjetas de niveles con animación al cargar */
+.level-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.level-card {
+    padding: 1rem;
+    background-color: var(--panel);
+    border-radius: 8px;
+    border-top: 8px solid var(--gray);
+    opacity: 0;
+    animation: card-in 0.8s ease-out forwards;
+}
+
+.level-card:nth-child(1) { animation-delay: 0.1s; }
+.level-card:nth-child(2) { animation-delay: 0.3s; }
+.level-card:nth-child(3) { animation-delay: 0.5s; }
+.level-card:nth-child(4) { animation-delay: 0.7s; }
+
+.level-card.np { border-top-color: #6b7a8f; }
+.level-card.bronze { border-top-color: #b87333; }
+.level-card.silver { border-top-color: #a9b4c4; }
+.level-card.gold { border-top-color: var(--gold); }
+
+.level-card h3 { margin: 0 0 0.4rem; color: var(--primary); font-size: 1.1rem; }
+.level-card p { margin: 0 0 0.75rem; font-size: 0.95rem; }
+
+.more-link {
+    padding: 0.4rem 0.9rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--primary);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.more-link:hover,
+.more-link:focus-visible {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+@keyframes card-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .level-card { animation: none; opacity: 1; }
+}
+
+/* Modales */
+dialog {
+    width: min(90%, 28rem);
+    padding: 1.25rem;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--white);
+    color: var(--text);
+}
+
+dialog::backdrop { background-color: rgba(0, 0, 0, 0.6); }
+
+dialog h2 { margin-top: 0; }
+dialog ul { padding-left: 1.2rem; }
+
+.close-modal {
+    padding: 0.5rem 1.2rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: var(--primary);
+    color: var(--white);
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus-visible { background-color: var(--primary-light); }
+
+/* ---------- Página Thank You ---------- */
+.thanks h1 { margin-bottom: 0.5rem; }
+
+.summary {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--panel);
+    border-left: 6px solid var(--primary);
+    border-radius: 8px;
+}
+
+.summary dt {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.summary dt:first-child { margin-top: 0; }
+
+.summary dd {
+    margin: 0.15rem 0 0;
+    overflow-wrap: anywhere;
+}
+
+.back-link { color: var(--primary); font-weight: 600; }
