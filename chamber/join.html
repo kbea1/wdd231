@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Trujillo Chamber of Commerce</title>
-    <meta name="description" content="Welcome to the Trujillo Chamber of Commerce. Discover local businesses, upcoming events, and how to join our community in La Libertad, Peru.">
+    <title>Join | Trujillo Chamber of Commerce</title>
+    <meta name="description" content="Apply for membership in the Trujillo Chamber of Commerce. Choose a membership level and join our business community in La Libertad, Peru.">
     <meta name="author" content="Karla Loyaga">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Home | Trujillo Chamber of Commerce">
-    <meta property="og:description" content="Discover local businesses, upcoming events, and how to join the Trujillo Chamber of Commerce.">
+    <meta property="og:title" content="Join | Trujillo Chamber of Commerce">
+    <meta property="og:description" content="Apply for membership in the Trujillo Chamber of Commerce.">
     <meta property="og:image" content="https://kbea1.github.io/wdd231/chamber/images/favicon.svg">
-    <meta property="og:url" content="https://kbea1.github.io/wdd231/chamber/index.html">
+    <meta property="og:url" content="https://kbea1.github.io/wdd231/chamber/join.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,8 +21,7 @@
     <link rel="stylesheet" href="styles/small.css">
     <link rel="stylesheet" href="styles/larger.css">
     <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/spotlights.js" defer></script>
+    <script src="scripts/join.js" defer></script>
     <script src="scripts/date.js" defer></script>
 </head>
 <body>
@@ -34,43 +33,130 @@
         </div>
         <nav id="main-nav" aria-label="Main">
             <ul>
-                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="join.html" aria-current="page">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="home">
-        <h1>Welcome to the Trujillo Chamber of Commerce</h1>
+    <main class="join">
+        <h1>Join the Trujillo Chamber of Commerce</h1>
 
-        <section class="hero">
-            <img src="images/hero.webp" alt="Colorful colonial buildings around the Plaza de Armas in Trujillo, Peru" width="1040" height="580">
-            <a class="cta" href="join.html">Join the Chamber</a>
-        </section>
+        <div class="join-layout">
+            <div class="application">
+                <form action="thankyou.html" method="get" class="join-form">
+                    <label>First Name
+                        <input type="text" name="first" title="Enter your first name" autocomplete="given-name" required>
+                    </label>
 
-        <section class="events">
-            <h2>Upcoming Events</h2>
+                    <label>Last Name
+                        <input type="text" name="last" title="Enter your last name" autocomplete="family-name" required>
+                    </label>
+
+                    <label>Organizational Title
+                        <input type="text" name="title" title="At least 7 characters. Letters, hyphens and spaces only." autocomplete="organization-title" pattern="[A-Za-z \-]{7,}">
+                    </label>
+
+                    <label>Email
+                        <input type="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@email.com" required>
+                    </label>
+
+                    <label>Mobile Phone
+                        <input type="tel" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
+                    </label>
+
+                    <label>Business or Organization Name
+                        <input type="text" name="organization" title="Enter the name of your business or organization" autocomplete="organization" required>
+                    </label>
+
+                    <label>Membership Level
+                        <select name="membership" title="Choose a membership level">
+                            <option value="np">NP Membership (non profit, no fee)</option>
+                            <option value="bronze">Bronze Membership</option>
+                            <option value="silver">Silver Membership</option>
+                            <option value="gold">Gold Membership</option>
+                        </select>
+                    </label>
+
+                    <label>Business Description
+                        <textarea name="description" title="Briefly describe your business or organization" rows="4"></textarea>
+                    </label>
+
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <button type="submit">Submit Application</button>
+                </form>
+            </div>
+
+            <section class="level-cards" aria-label="Membership levels">
+                <article class="level-card np">
+                    <h3>NP Membership</h3>
+                    <p>For non profit organizations.</p>
+                    <button type="button" class="more-link" data-modal="modal-np">See benefits</button>
+                </article>
+                <article class="level-card bronze">
+                    <h3>Bronze Membership</h3>
+                    <p>A great start for small businesses.</p>
+                    <button type="button" class="more-link" data-modal="modal-bronze">See benefits</button>
+                </article>
+                <article class="level-card silver">
+                    <h3>Silver Membership</h3>
+                    <p>More training and visibility.</p>
+                    <button type="button" class="more-link" data-modal="modal-silver">See benefits</button>
+                </article>
+                <article class="level-card gold">
+                    <h3>Gold Membership</h3>
+                    <p>Our top level with the most benefits.</p>
+                    <button type="button" class="more-link" data-modal="modal-gold">See benefits</button>
+                </article>
+            </section>
+        </div>
+
+        <dialog id="modal-np">
+            <h2>NP Membership</h2>
+            <p>For non profit organizations. No fee.</p>
             <ul>
-                <li><strong>Networking Breakfast</strong><br>First Friday of each month, 8:00 AM</li>
-                <li><strong>Marinera Festival Business Fair</strong><br>January, Plaza de Armas</li>
-                <li><strong>Small Business Workshop</strong><br>Last Thursday of the month, 6:00 PM</li>
+                <li>Listing in the member directory</li>
+                <li>Invitations to chamber events</li>
+                <li>Monthly newsletter</li>
             </ul>
-        </section>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
 
-        <section class="weather">
-            <h2>Trujillo Weather</h2>
-            <p id="current-temp">Loading weather...</p>
-            <p id="weather-desc"></p>
-            <h3>3-Day Forecast</h3>
-            <ul id="forecast"></ul>
-        </section>
+        <dialog id="modal-bronze">
+            <h2>Bronze Membership</h2>
+            <p>Everything in NP, plus:</p>
+            <ul>
+                <li>Networking Breakfast access</li>
+                <li>Basic business training workshops</li>
+                <li>Discount on event tickets</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
 
-        <section class="spotlights">
-            <h2>Member Spotlights</h2>
-            <div id="spotlights"></div>
-        </section>
+        <dialog id="modal-silver">
+            <h2>Silver Membership</h2>
+            <p>Everything in Bronze, plus:</p>
+            <ul>
+                <li>Advanced training sessions</li>
+                <li>Larger event discounts</li>
+                <li>Advertising on the chamber website</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
+
+        <dialog id="modal-gold">
+            <h2>Gold Membership</h2>
+            <p>Everything in Silver, plus:</p>
+            <ul>
+                <li>Spotlight position on the home page</li>
+                <li>Free admission to chamber events</li>
+                <li>Priority booth at the Marinera Festival Business Fair</li>
+            </ul>
+            <button type="button" class="close-modal">Close</button>
+        </dialog>
     </main>
 
     <footer>
