@@ -1,14 +1,14 @@
 :root {
     --primary: #2f3a5f;
     --primary-light: #4a5a8f;
-    --secondary: #d9694a;
     --text: #1f1f1f;
-    --bg: #ffffff;
     --white: #ffffff;
     --gray: #e3e3e3;
     --panel: #f2f2f2;
+    --border: #8a8a8a;
     --gold: #f2c94c;
     --silver: #c9d1dc;
+    --bronze: #b87333;
 }
 
 * { box-sizing: border-box; }
@@ -16,7 +16,7 @@
 body {
     font-family: "Poppins", sans-serif;
     color: var(--text);
-    background-color: var(--bg);
+    background-color: var(--white);
     line-height: 1.6;
 }
 
@@ -80,6 +80,89 @@ h1 {
     margin: 1rem 0;
 }
 
+.home h2,
+.join h2 {
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.3rem;
+}
+
+/* ---------- Botones (estilo compartido) ---------- */
+.view-buttons button,
+.more-link,
+.close-modal,
+.application input[type="submit"] {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary);
+    border-radius: 6px;
+    background-color: var(--white);
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.view-buttons button[aria-pressed="true"],
+.close-modal,
+.application input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.view-buttons button:hover,
+.view-buttons button:focus-visible,
+.more-link:hover,
+.more-link:focus-visible,
+.close-modal:hover,
+.close-modal:focus-visible,
+.application input[type="submit"]:hover,
+.application input[type="submit"]:focus-visible {
+    background-color: var(--primary-light);
+    color: var(--white);
+}
+
+.application input[type="submit"] {
+    padding: 0.75rem 1rem;
+    font-size: 1.05rem;
+}
+
+/* ---------- Cajas (estilo compartido) ---------- */
+.card,
+.spotlight,
+.weather,
+.level-card,
+.summary,
+.application form {
+    background-color: var(--panel);
+    border-radius: 8px;
+}
+
+.card,
+.spotlight {
+    overflow: hidden;
+    border: 1px solid var(--gray);
+}
+
+.weather,
+.level-card,
+.summary,
+.application form { padding: 1rem; }
+
+/* ---------- Cuadrículas (estilo compartido) ---------- */
+#members,
+#spotlights,
+.level-cards,
+.join-layout,
+.application form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.join-layout { gap: 1.5rem; }
+
+/* ---------- Directory ---------- */
 .view-buttons {
     display: flex;
     justify-content: center;
@@ -87,48 +170,13 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.view-buttons button {
-    min-width: 6rem;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--primary);
-    border-radius: 6px;
-    background-color: var(--white);
-    color: var(--primary);
-    cursor: pointer;
-}
-
-.view-buttons button[aria-pressed="true"] {
-    background-color: var(--primary);
-    color: var(--white);
-}
-
-.view-buttons button:hover,
-.view-buttons button:focus-visible {
-    background-color: var(--primary-light);
-    color: var(--white);
-}
-
-/* ---------- Tarjetas de miembros ---------- */
-#members {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.card {
-    background-color: var(--panel);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--gray);
-}
+.view-buttons button { min-width: 6rem; }
 
 .card-header {
     background-color: var(--gray);
     text-align: center;
     padding: 0.5rem;
-    border-bottom: 1px solid #b5b5b5;
+    border-bottom: 1px solid var(--border);
 }
 
 .card-header h2 {
@@ -150,7 +198,6 @@ h1 {
 
 .card-body img {
     width: 110px;
-    height: auto;
     flex-shrink: 0;
     align-self: flex-start;
     border-radius: 6px;
@@ -162,7 +209,9 @@ h1 {
     overflow-wrap: anywhere;
 }
 
-.card-details a { color: var(--primary); }
+.card-details a,
+.spotlight a,
+.back-link { color: var(--primary); }
 
 .badge {
     display: inline-block;
@@ -170,43 +219,23 @@ h1 {
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text);
     background-color: var(--gray);
 }
 
 .badge.silver { background-color: var(--silver); }
 .badge.gold { background-color: var(--gold); }
 
-/* Vista de lista: una columna, sin imágenes */
-#members.list { grid-template-columns: 1fr; gap: 0.5rem; }
+/* Vista de lista: sin imágenes */
+#members.list { gap: 0.5rem; }
 #members.list .card-body img { display: none; }
 
-/* ---------- Footer ---------- */
-footer {
-    background-color: var(--gray);
-    color: var(--text);
-    padding: 1rem;
-}
-
-footer p { margin: 0.2rem 0; }
-
-.footer-contact,
-.footer-info { text-align: center; padding: 0.5rem 0; }
-
-.social {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    padding: 0.5rem 0;
-}
-/* ---------- Página de inicio ---------- */
+/* ---------- Home ---------- */
 .home section { margin-bottom: 1.5rem; }
 
 .hero { position: relative; }
 
 .hero img {
     width: 100%;
-    height: auto;
     border-radius: 8px;
 }
 
@@ -228,14 +257,6 @@ footer p { margin: 0.2rem 0; }
 .cta:hover,
 .cta:focus-visible { background-color: var(--primary-light); }
 
-.home h2 {
-    margin: 0 0 0.75rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 3px solid var(--primary);
-    color: var(--primary);
-    font-size: 1.3rem;
-}
-
 .events ul,
 .weather ul {
     margin: 0;
@@ -251,7 +272,6 @@ footer p { margin: 0.2rem 0; }
     border-radius: 4px;
 }
 
-.weather { background-color: var(--panel); padding: 1rem; border-radius: 8px; }
 .weather h3 { margin: 1rem 0 0.5rem; font-size: 1.05rem; color: var(--primary); }
 .weather p { margin: 0.2rem 0; }
 #current-temp { font-size: 1.8rem; font-weight: 600; }
@@ -264,19 +284,7 @@ footer p { margin: 0.2rem 0; }
     border-bottom: 1px solid var(--gray);
 }
 
-#spotlights {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-.spotlight {
-    background-color: var(--panel);
-    border: 1px solid var(--gray);
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-}
+.spotlight { text-align: center; }
 
 .spotlight h3 {
     margin: 0;
@@ -288,42 +296,18 @@ footer p { margin: 0.2rem 0; }
 
 .spotlight img {
     width: 120px;
-    height: auto;
     margin: 0.75rem auto 0;
     border-radius: 6px;
 }
 
 .spotlight p { margin: 0.25rem 0; padding: 0 0.75rem; font-size: 0.9rem; overflow-wrap: anywhere; }
 .spotlight p:last-child { padding-bottom: 0.75rem; }
-.spotlight a { color: var(--primary); }
-/* ---------- Página Join ---------- */
-.join-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
 
-.join h2 {
-    margin: 0 0 0.75rem;
-    padding-bottom: 0.4rem;
-    border-bottom: 3px solid var(--primary);
-    color: var(--primary);
-    font-size: 1.3rem;
-}
-
-.application form {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: var(--panel);
-    border-radius: 8px;
-}
-
+/* ---------- Join ---------- */
 .application label {
     display: grid;
     gap: 0.3rem;
     font-weight: 600;
-    color: var(--text);
 }
 
 .application input[type="text"],
@@ -333,13 +317,10 @@ footer p { margin: 0.2rem 0; }
 .application textarea {
     width: 100%;
     padding: 0.6rem;
-    border: 2px solid #8a8a8a;
+    border: 2px solid var(--border);
     border-radius: 6px;
     background-color: var(--white);
     color: var(--text);
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 400;
 }
 
 .application input:focus,
@@ -350,34 +331,8 @@ footer p { margin: 0.2rem 0; }
     border-color: var(--primary);
 }
 
-.application input[type="submit"] {
-    padding: 0.75rem 1rem;
-    border: 2px solid var(--primary);
-    border-radius: 6px;
-    background-color: var(--primary);
-    color: var(--white);
-    font-family: inherit;
-    font-size: 1.05rem;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.application input[type="submit"]:hover,
-.application input[type="submit"]:focus-visible {
-    background-color: var(--primary-light);
-}
-
 /* Tarjetas de niveles con animación al cargar */
-.level-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
 .level-card {
-    padding: 1rem;
-    background-color: var(--panel);
-    border-radius: 8px;
     border-top: 8px solid var(--gray);
     opacity: 0;
     animation: card-in 0.8s ease-out forwards;
@@ -388,30 +343,13 @@ footer p { margin: 0.2rem 0; }
 .level-card:nth-child(3) { animation-delay: 0.5s; }
 .level-card:nth-child(4) { animation-delay: 0.7s; }
 
-.level-card.np { border-top-color: #6b7a8f; }
-.level-card.bronze { border-top-color: #b87333; }
-.level-card.silver { border-top-color: #a9b4c4; }
+.level-card.np { border-top-color: var(--primary-light); }
+.level-card.bronze { border-top-color: var(--bronze); }
+.level-card.silver { border-top-color: var(--silver); }
 .level-card.gold { border-top-color: var(--gold); }
 
 .level-card h3 { margin: 0 0 0.4rem; color: var(--primary); font-size: 1.1rem; }
 .level-card p { margin: 0 0 0.75rem; font-size: 0.95rem; }
-
-.more-link {
-    padding: 0.4rem 0.9rem;
-    border: 2px solid var(--primary);
-    border-radius: 6px;
-    background-color: var(--white);
-    color: var(--primary);
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.more-link:hover,
-.more-link:focus-visible {
-    background-color: var(--primary);
-    color: var(--white);
-}
 
 @keyframes card-in {
     from { opacity: 0; transform: translateY(20px); }
@@ -434,32 +372,14 @@ dialog {
 
 dialog::backdrop { background-color: rgba(0, 0, 0, 0.6); }
 
-dialog h2 { margin-top: 0; }
 dialog ul { padding-left: 1.2rem; }
 
-.close-modal {
-    padding: 0.5rem 1.2rem;
-    border: 2px solid var(--primary);
-    border-radius: 6px;
-    background-color: var(--primary);
-    color: var(--white);
-    font-family: inherit;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.close-modal:hover,
-.close-modal:focus-visible { background-color: var(--primary-light); }
-
-/* ---------- Página Thank You ---------- */
+/* ---------- Thank You ---------- */
 .thanks h1 { margin-bottom: 0.5rem; }
 
 .summary {
     margin: 1.5rem 0;
-    padding: 1rem;
-    background-color: var(--panel);
     border-left: 6px solid var(--primary);
-    border-radius: 8px;
 }
 
 .summary dt {
@@ -475,4 +395,22 @@ dialog ul { padding-left: 1.2rem; }
     overflow-wrap: anywhere;
 }
 
-.back-link { color: var(--primary); font-weight: 600; }
+.back-link { font-weight: 600; }
+
+/* ---------- Footer ---------- */
+footer {
+    background-color: var(--gray);
+    padding: 1rem;
+}
+
+footer p { margin: 0.2rem 0; }
+
+.footer-contact,
+.footer-info { text-align: center; padding: 0.5rem 0; }
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 0.5rem 0;
+}
